@@ -5,24 +5,26 @@
 !_TAG_PROGRAM_NAME	Universal Ctags	/Derived from Exuberant Ctags/
 !_TAG_PROGRAM_URL	https://ctags.io/	/official site/
 !_TAG_PROGRAM_VERSION	0.0.0	/3fdf28bc/
-VectorHasher	main.cpp	/^struct VectorHasher {$/;"	s	file:
 VectorHasher	teste_matrix.cpp	/^struct VectorHasher {$/;"	s	file:
 _	main.cpp	/^#define _ /;"	d	file:
 comparator_queue	main.cpp	/^struct comparator_queue {$/;"	s	file:
-create_neighbors	main.cpp	/^void create_neighbors(std::vector<int> mat, int i, int n, int m,$/;"	f	typeref:typename:void
+create_neighbors	main.cpp	/^void create_neighbors($/;"	f	typeref:typename:void
+crete_string	test_str.cpp	/^void crete_string(std::string &oie) { oie = "azul"; }$/;"	f	typeref:typename:void
 dijkstra	main.cpp	/^int dijkstra(std::vector<int> initial_state, std::vector<int> final_state,$/;"	f	typeref:typename:int
-display	combination.cpp	/^void display(int a[], int n) {$/;"	f	typeref:typename:void
+display	combination.cpp	/^void display(std::vector<int> a, int n) {$/;"	f	typeref:typename:void
 efficient-transport	README.md	/^# efficient-transport$/;"	c
-findPermutations	combination.cpp	/^void findPermutations(int a[], int n) {$/;"	f	typeref:typename:void
+findPermutations	combination.cpp	/^void findPermutations(std::vector<int> a, int n) {$/;"	f	typeref:typename:void
+graph	combination.cpp	/^std::unordered_map<std::string, std::pair<std::vector<int>, int>> graph;$/;"	v	typeref:typename:std::unordered_map<std::string,std::pair<std::vector<int>,int>>
 main	combination.cpp	/^int main() {$/;"	f	typeref:typename:int
 main	main.cpp	/^int main() {$/;"	f	typeref:typename:int
 main	prio_q.cpp	/^int main() {$/;"	f	typeref:typename:int
+main	test_str.cpp	/^int main() { std::cout << opa() << std::endl; }$/;"	f	typeref:typename:int
 main	teste_matrix.cpp	/^int main() {$/;"	f	typeref:typename:int
 make_move	teste_matrix.cpp	/^std::vector<std::vector<int>> make_move(std::vector<int> mat, int i, int n,$/;"	f	typeref:typename:std::vector<std::vector<int>>
 my_comparator	prio_q.cpp	/^struct my_comparator {$/;"	s	file:
 my_priority_queue	prio_q.cpp	/^using my_priority_queue =$/;"	t	file:
-operator ()	main.cpp	/^  bool operator()(std::pair<std::vector<int>, int> const &a,$/;"	f	struct:comparator_queue	typeref:typename:bool	file:
-operator ()	main.cpp	/^  int operator()(const vector<int> &V) const {$/;"	f	struct:VectorHasher	typeref:typename:int	file:
+opa	test_str.cpp	/^std::string opa() {$/;"	f	typeref:typename:std::string
+operator ()	main.cpp	/^  bool operator()(std::pair<std::string, int> const &a,$/;"	f	struct:comparator_queue	typeref:typename:bool	file:
 operator ()	prio_q.cpp	/^  bool operator()(std::pair<std::vector<int>, int> const &a,$/;"	f	struct:my_comparator	typeref:typename:bool	file:
 operator ()	teste_matrix.cpp	/^  int operator()(const vector<int> &V) const {$/;"	f	struct:VectorHasher	typeref:typename:int	file:
 print	main.cpp	/^void print(std::vector<int> const &input) {$/;"	f	typeref:typename:void
@@ -31,3 +33,5 @@ print2D	main.cpp	/^void print2D(std::vector<std::vector<int>> const &input) {$/;
 print_mat	teste_matrix.cpp	/^void print_mat(std::vector<int> aux_mat) {$/;"	f	typeref:typename:void
 queue_graph	main.cpp	/^using queue_graph =$/;"	t	file:
 reverse_order	main.cpp	/^int reverse_order($/;"	f	typeref:typename:int
+transform_string_to_vector	main.cpp	/^std::vector<int> transform_string_to_vector(std::string vec_str,$/;"	f	typeref:typename:std::vector<int>
+transform_vector_to_string	main.cpp	/^void transform_vector_to_string(std::vector<int> vec, std::string &vec_str) {$/;"	f	typeref:typename:void
