@@ -2,21 +2,35 @@
 // of an array using STL in C++
 
 #include <bits/stdc++.h>
+#include <functional>
 #include <iostream>
+#include <limits>
+#include <numeric>
 #include <vector>
 using namespace std;
 
 // VectorHasher is a struct that transform a vector 1D into a hash key for
 // unordered_map 1
 
-std::unordered_map<std::string, std::pair<std::vector<int>, int>> graph;
+std::unordered_map<int, int> graph;
 // Function to display the array
 void display(std::vector<int> a, int n) {
   for (int i = 0; i < n; i++) {
-    // cout << a[i] << " ";
+    cout << a[i] << " ";
   }
-  // cout << endl;
+  cout << endl;
 }
+
+class uint32_vector_hasher {
+public:
+  std::size_t operator()(std::vector<int> const &vec) const {
+    std::size_t seed = vec.size();
+    for (auto &i : vec) {
+      seed ^= i + 0x9e3779b9 + (seed << 6) + (seed >> 2);
+    }
+    return seed;
+  };
+};
 
 // Function to find the permutations
 void findPermutations(std::vector<int> a, int n) {
@@ -25,23 +39,22 @@ void findPermutations(std::vector<int> a, int n) {
   std::sort(a.begin(), a.end());
   int contador = 0;
 
-  std::ostringstream vts;
-  // Convert all but the last element to avoid a trailing ","
-  std::copy(a.begin(), a.end() - 1, std::ostream_iterator<int>(vts, "-"));
+  uint32_vector_hasher hasher;
 
-  // Now add the last element with no delimiter
-  vts << a.back();
-  graph[vts.str()] = std::make_pair(a, 1);
+  auto key_first = hasher(a);
+
+  // int key_first = std::inner_product(a.begin(), a.end(), total_n.begin(),
+  // 0);
+
+  graph[key_first] = std::numeric_limits<int>::max();
 
   // Find all possible permutations
   do {
-    display(a, n);
+    // display(a, n);
 
-    std::ostringstream vts;
-    // Convert all but the last element to avoid a trailing ","
-    std::copy(a.begin(), a.end() - 1, std::ostream_iterator<int>(vts, "-"));
-    vts << a.back();
-    graph[vts.str()] = std::make_pair(a, 1);
+    auto key_g = hasher(a);
+
+    graph[key_g] = std::numeric_limits<int>::max();
     contador += 1;
   } while (next_permutation(a.begin(), a.end()));
 
@@ -56,7 +69,7 @@ int main() {
 
   int n = sizeof(a) / sizeof(a[0]);
 
-  findPermutations(a, n);
+  findPermutations(a, 9);
 
   return 0;
 }
